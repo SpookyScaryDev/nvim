@@ -1,6 +1,6 @@
 return require('packer').startup(function()
     use "wbthomason/packer.nvim"
-    use "ellisonleao/gruvbox.nvim"
+    use "sainnhe/gruvbox-material"
     use 'sainnhe/everforest'
     use {
         'kyazdani42/nvim-tree.lua',
@@ -18,7 +18,7 @@ return require('packer').startup(function()
         'nvim-telescope/telescope-project.nvim',
     }
     use 'JoseConseco/telescope_sessions_picker.nvim'
-    use {'lewis6991/gitsigns.nvim', config=function() require('gitsigns').setup() end }
+    use 'lewis6991/gitsigns.nvim'
     use 'feline-nvim/feline.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use {

@@ -60,7 +60,5 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost" }, { callback = open_nvim_tree }
 
 vim.api.nvim_exec(
 [[
-    highlight NvimTreeNormal guibg=#1d2021
-    highlight NvimTreeVertSplit guifg=#1d2021 guibg=#1d2021
-
+    highlight link NvimTreeNormalNC NvimTreeNormal
 ]], false)

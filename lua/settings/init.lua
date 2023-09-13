@@ -4,7 +4,7 @@ local g = vim.g
 
 vim.api.nvim_exec(
 [[
-    cd D:\\Users\\Thomas\\Documents\\Dev
+    cd C:\\Users\\TC_20\\Documents
     runtime ./monkeyterm.vim
 ]], false)
 
@@ -56,10 +56,9 @@ map('n', '<A-k>', ":m .-2<CR>gv=gv <ESC>", { silent=true})
 vim.api.nvim_exec(
 [[
     highlight NonText guifg=bg
-    highlight VertSplit guifg = #1d2021 guibg = #1d2021
-    highlight StatusLine guifg = #1d2021 
-    highlight StatusLineNC guifg = #1d2021 
-    highlight SignColumn guibg = bg 
-    highlight TermNormal guibg=#1d2021
+    highlight VertSplit guibg=bg
+    highlight StatusLine guifg = bg 
+    highlight StatusLineNC guifg = bg 
+    highlight TermNormal guibg=bg
 ]], false)
-
+ 
