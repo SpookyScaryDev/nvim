@@ -1,8 +1,9 @@
 local g = vim.g
 
-require('indent_blankline').setup()
+require('ibl').setup {
+    indent = { char = "┆" }
+}
 g.indent_blankline_char = "┆"
-
 
 vim.api.nvim_exec(
 [[

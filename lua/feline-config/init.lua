@@ -19,7 +19,7 @@ local components = {
 }
 
 local colors = {
-  bg = '#1d2021',
+  bg = '#1D2021',
   black = '#1d2021',
   yellow = '#d8a657',
   cyan = '#89b482',
@@ -52,7 +52,7 @@ local vi_mode_colors = {
   TERM = 'green',
   NONE = 'yellow'
 }
-
+ 
 local vi_mode_text = {
   NORMAL = '<|',
   OP = '<|',
@@ -113,13 +113,24 @@ components.active[1] = { {
   hl = function()
     local val = {}
 
-    val.bg = vi_mode_utils.get_mode_color()
-    val.fg = 'black'
+    val.bg = bg
+    val.fg = vi_mode_utils.get_mode_color()
     val.style = 'bold'
 
     return val
   end,
   right_sep = ' '
+},
+{
+  provider = 'git_branch',
+  hl = {
+    fg = 'yellow',
+    bg = 'bg',
+    style = 'bold'
+  },
+  right_sep = {
+    str = '  ',
+  }
 },
 -- filename
 {
@@ -130,7 +141,7 @@ components.active[1] = { {
     style = 'bold'
   },
   right_sep = {
-    str = ' ',
+    str = '  ',
   }
 },
 
@@ -138,41 +149,33 @@ components.active[1] = { {
 -- MID
 
 -- gitBranch
-{
-  provider = 'git_branch',
-  hl = {
-    fg = 'yellow',
-    bg = 'bg',
-    style = 'bold'
-  }
-},
 -- diffAdd
-{
-  provider = 'git_diff_added',
-  hl = {
-    fg = 'green',
-    bg = 'bg',
-    style = 'bold'
-  }
-},
--- diffModfified
-{
-  provider = 'git_diff_changed',
-  hl = {
-    fg = 'orange',
-    bg = 'bg',
-    style = 'bold'
-  }
-},
--- diffRemove
-{
-  provider = 'git_diff_removed',
-  hl = {
-    fg = 'red',
-    bg = 'bg',
-    style = 'bold'
-  },
-},
+--{
+--  provider = 'git_diff_added',
+--  hl = {
+--    fg = 'green',
+--    bg = 'bg',
+--    style = 'bold'
+--  }
+--},
+---- diffModfified
+--{
+--  provider = 'git_diff_changed',
+--  hl = {
+--    fg = 'orange',
+--    bg = 'bg',
+--    style = 'bold'
+--  }
+--},
+---- diffRemove
+--{
+--  provider = 'git_diff_removed',
+--  hl = {
+--    fg = 'red',
+--    bg = 'bg',
+--    style = 'bold'
+--  },
+--},
 -- diagnosticErrors
 {
   provider = 'diagnostic_errors',
@@ -229,7 +232,7 @@ components.active[3] = {{
     local extension = vim.fn.expand('%:e')
     local icon  = require'nvim-web-devicons'.get_icon(filename, extension)
     if icon == nil then
-      icon = ''
+      icon = ' '
     end
     return icon
   end,
@@ -243,8 +246,8 @@ components.active[3] = {{
     else
       val.fg = 'white'
     end
-    val.bg = 'bg'
-    val.style = 'bold'
+    --val.bg = 'bg'
+    --val.style = 'bold'
     return val
   end,
   right_sep = ' '
@@ -283,7 +286,7 @@ components.active[3] = {{
 {
   provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
   hl = {
-    fg = 'white',
+    fg = 'orange',
     bg = 'bg',
     style = 'bold'
   },
@@ -293,7 +296,7 @@ components.active[3] = {{
 {
   provider = 'file_encoding',
   hl = {
-    fg = 'white',
+    fg = 'violet',
     bg = 'bg',
     style = 'bold'
   },
@@ -312,20 +315,20 @@ components.active[3] = {{
 --   right_sep = ' '
 -- }
 -- lineInfo
-{
-  provider = 'position',
-  hl = {
-    fg = 'white',
-    bg = 'bg',
-    style = 'bold'
-  },
-  right_sep = ' '
-},
+--{
+--  provider = 'position',
+--  hl = {
+--    fg = 'white',
+--    bg = 'bg',
+--    style = 'bold'
+--  },
+--  right_sep = ' '
+--},
 -- linePercent
 {
   provider = 'line_percentage',
   hl = {
-    fg = 'white',
+    fg = 'skyblue',
     bg = 'bg',
     style = 'bold'
   },
@@ -335,9 +338,10 @@ components.active[3] = {{
 {
   provider = 'scroll_bar',
   hl = {
-    fg = 'yellow',
+    fg = 'skyblue',
     bg = 'bg',
   },
+  right_sep = ' '
 }
 }
 

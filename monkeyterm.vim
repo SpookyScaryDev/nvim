@@ -98,9 +98,9 @@ nnoremap <F7> :call MonkeyTerminalToggle()<cr>
 tnoremap <F7> <C-\><C-n>:call MonkeyTerminalToggle()<cr>
 
 " This an example on how specify command with different types of files.
-    augroup go
-        autocmd!
-        autocmd BufRead,BufNewFile *.go set filetype=go
-        autocmd FileType go nnoremap <F5> :call MonkeyTerminalExec('go run ' . expand('%'))<cr>
-    augroup END
+"    augroup go
+"        autocmd!
+"        autocmd BufRead,BufNewFile *.go set filetype=go
+"        autocmd FileType go nnoremap <F5> :call MonkeyTerminalExec('go run ' . expand('%'))<cr>
+"    augroup END
 

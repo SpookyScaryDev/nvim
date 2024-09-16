@@ -15,8 +15,9 @@ require('telescope').setup({
 
 vim.api.nvim_exec(
 [[
-    highlight TelescopeNormal guibg=bg
     highlight TelescopeResultsBorder guifg=#83a598
     highlight TelescopePromptBorder guifg=#83a598
-    highlight TelescopeBorder guifg=bg guibg=#83a598
+    highlight TelescopeBorder guifg=#83a598
 ]], false)
+
+    --highlight TelescopeNormal guibg=#1b1b1b

@@ -2,11 +2,11 @@ local set = vim.opt
 local map = require("utils").map
 local g = vim.g
 
-vim.api.nvim_exec(
-[[
-    cd C:\\Users\\TC_20\\Documents
-    runtime ./monkeyterm.vim
-]], false)
+-- vim.api.nvim_exec(
+-- [[
+--     cd C:\\Users\\TC_20\\Documents
+--     runtime ./monkeyterm.vim
+-- ]], false)
 
 set.number = true
 set.cursorline = true
@@ -24,7 +24,7 @@ set.laststatus = 3
 
 set.signcolumn='yes'
 
-set.showtabline=0
+set.showtabline=1
 
 map( 'n', '<F1>', ':Alpha <CR>', { silent = true })
 
@@ -52,11 +52,13 @@ map('n', '<S-Enter>', 'O <Esc>', { silent=true})
 map('n', '<A-j>', ":m .+1<CR>gv=gv <ESC>", { silent=true})
 map('n', '<A-k>', ":m .-2<CR>gv=gv <ESC>", { silent=true})
 
+map('i', 'jj', '<ESC>', { silent=true })
 
 vim.api.nvim_exec(
 [[
     highlight NonText guifg=bg
-    highlight VertSplit guibg=bg
+    highlight EndOfBuffer guifg=bg
+    highlight VertSplit guifg=#1b1b1b guibg=bg
     highlight StatusLine guifg = bg 
     highlight StatusLineNC guifg = bg 
     highlight TermNormal guibg=bg

@@ -3,7 +3,7 @@ vim.opt.termguicolors = true
 
 local options = {
    options = {
-      offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+      offsets = { { filetype = "NvimTree", text = "", padding = 1, highlight="Directory" } },
       buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",

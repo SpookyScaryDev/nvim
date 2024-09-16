@@ -40,14 +40,14 @@ end
          border = border "CmpDocBorder",
       },
    },
-   formatting = {
-      format = function(_, vim_item)
-         local icons = require "lspkind"
-         vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-
-         return vim_item
-      end,
-   },
+--   formatting = {
+--      format = function(_, vim_item)
+--         local icons = require "lspkind"
+--         vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+--
+--         return vim_item
+--      end,
+--   },
    mapping = {
       ["<C-p>"] = cmp.mapping.select_prev_item(),
       ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -85,7 +85,7 @@ end
       }),
    },
    sources = {
-      { name = "nvim_lsp" },
+     -- { name = "nvim_lsp" },
      -- { name = "luasnip" },
       { name = "buffer" },
       { name = "nvim_lua" },
@@ -120,28 +120,28 @@ end
     })
   })
   -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
---   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
---   require('lspconfig')["lua_ls"].setup {
---     capabilities = capabilities
---   }
---   require('lspconfig')["emmet_ls"].setup {
---     capabilities = capabilities
---   }
---   require('lspconfig')["clangd"].setup {
---     capabilities = capabilities
---   }
---   require('lspconfig')["tsserver"].setup {
---     capabilities = capabilities
---   }
-
-local language_servers = {'lua_ls', 'clangd', 'emmet_ls', 'tsserver', 'cssls' }
-for _, ls in pairs(language_servers) do
-    require('lspconfig')[ls].setup {
-        capabilities = capabilities
-        -- you can add other fields for setting up lsp server in this table
-    }
-end
+--   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- --   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+-- --   require('lspconfig')["lua_ls"].setup {
+-- --     capabilities = capabilities
+-- --   }
+-- --   require('lspconfig')["emmet_ls"].setup {
+-- --     capabilities = capabilities
+-- --   }
+-- --   require('lspconfig')["clangd"].setup {
+-- --     capabilities = capabilities
+-- --   }
+-- --   require('lspconfig')["tsserver"].setup {
+-- --     capabilities = capabilities
+-- --   }
+-- 
+-- local language_servers = {'lua_ls', 'clangd', 'emmet_ls', 'tsserver', 'cssls' }
+-- for _, ls in pairs(language_servers) do
+--     require('lspconfig')[ls].setup {
+--         capabilities = capabilities
+--         -- you can add other fields for setting up lsp server in this table
+--     }
+-- end
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 vim.api.nvim_exec(
 [[

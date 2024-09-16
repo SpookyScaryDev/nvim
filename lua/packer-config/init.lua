@@ -22,20 +22,26 @@ return require('packer').startup(function()
     use 'feline-nvim/feline.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use {
-        'xolox/vim-session',
-        requires = { {'xolox/vim-misc'} },
-        config = function() vim.g.session_directory = 'C:\\Users\\Thomas\\AppData\\Local\\nvim-data\\session' vim.g.session_autosave = 'no' end
-    }
-    use {
         'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup{} end
     }
     use 'nvim-treesitter/nvim-treesitter'
-    --use 'williamboman/nvim-lsp-installer'
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use "neovim/nvim-lspconfig"
-    use 'onsails/lspkind.nvim'
+
+    -- use {
+    --   'VonHeikemen/lsp-zero.nvim',
+    --   branch = 'v3.x',
+    --   requires = {
+    --     --- Uncomment the two plugins below if you want to manage the language servers from neovim
+    --     {'williamboman/mason.nvim'},
+    --     {'williamboman/mason-lspconfig.nvim'},
+    -- 
+    --     {'neovim/nvim-lspconfig'},
+    --     {'hrsh7th/nvim-cmp'},
+    --     {'hrsh7th/cmp-nvim-lsp'},
+    --     {'L3MON4D3/LuaSnip'},
+    --   }
+    -- }
+
     use 'sar/cmp.nvim'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'

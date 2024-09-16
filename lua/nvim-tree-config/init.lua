@@ -15,7 +15,6 @@ local options = {
    view = {
       side = "left",
       width = 40,
-      hide_root_folder = true,
    },
    git = {
       enable = false,
@@ -27,12 +26,13 @@ local options = {
       },
    },
    renderer = {
-      highlight_opened_files = '0',
+      highlight_opened_files = 'all',
       highlight_git = true,
       add_trailing = false,
       indent_markers = {
          enable = false,
       },
+      root_folder_label = false,
    },
 }
 
@@ -56,9 +56,10 @@ local function open_nvim_tree(data)
   require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
 end
 
-vim.api.nvim_create_autocmd({ "SessionLoadPost" }, { callback = open_nvim_tree })
+--vim.api.nvim_create_autocmd({ "SessionLoadPost" }, { callback = open_nvim_tree })
 
 vim.api.nvim_exec(
 [[
-    highlight link NvimTreeNormalNC NvimTreeNormal
+    highlight NvimTreeNormal guibg=bg
+    highlight NvimTreeEndOfbuffer guibg=bg
 ]], false)
