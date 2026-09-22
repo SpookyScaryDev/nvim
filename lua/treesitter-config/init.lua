@@ -1,4 +1,3 @@
-require 'nvim-treesitter.install'.compilers = { "clang" }
 local configs = require'nvim-treesitter.configs'
 configs.setup {
 ensure_installed = {},

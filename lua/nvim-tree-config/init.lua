@@ -11,6 +11,7 @@ local options = {
    update_focused_file = {
       enable = true,
       update_cwd = false,
+      ignore_list = {},
    },
    view = {
       side = "left",
@@ -40,7 +41,7 @@ require'nvim-tree'.setup(options)
 
 local function open_nvim_tree(data)
 
-  -- buffer is a real file on the disk
+  -- buffer is a real file on the disktree
   local real_file = vim.fn.filereadable(data.file) == 1
 
   -- buffer is a [No Name]
@@ -53,7 +54,7 @@ local function open_nvim_tree(data)
   if no_name then return end 
 
   -- open the tree, find the file but don't focus it
-  require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
+  require("nvim-tree.api").tree.toggle({ focus = true, find_file = true, })
 end
 
 --vim.api.nvim_create_autocmd({ "SessionLoadPost" }, { callback = open_nvim_tree })
@@ -62,4 +63,5 @@ vim.api.nvim_exec(
 [[
     highlight NvimTreeNormal guibg=bg
     highlight NvimTreeEndOfbuffer guibg=bg
+    highlight clear NvimTreeCursorLine
 ]], false)

@@ -9,7 +9,25 @@ require('telescope').setup({
     	},
         results_title = false,
         prompt_title = false,
+        mappings = {
+            i = {
+                ["<C-j>"] = "move_selection_next",
+                ["<C-k>"] = "move_selection_previous"
+            }
+        },
         dynamic_preview_title = false,
+        vimgrep_arguments = {
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--hidden',
+          --'--glob=!**/node_modules/*',
+          '--ignore-file', '.gitignore'
+        }
     };
 })
 
